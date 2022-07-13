@@ -1,0 +1,8 @@
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\bin\Debug\KampIntro.exe.config
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\bin\Debug\KampIntro.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\bin\Debug\KampIntro.pdb
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\obj\Debug\KampIntro.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\obj\Debug\KampIntro.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\obj\Debug\KampIntro.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\obj\Debug\KampIntro.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\KampIntro\obj\Debug\KampIntro.pdb
