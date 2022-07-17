@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,8 +6,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
+    // **Core katmanı başka katmanları referans almaz alırsa bağımlı olur
     //generic constraint(generic kısk)
     //class : referans tip gelebilir
     //IEntity : IEntity olabilr veya Ientity implemente edebilen nesne olabilir
@@ -23,6 +24,7 @@ namespace DataAccess.Abstract
         void Update(T entity);
 
         void Delete(T entity);
+        //Alt yapı ekibi Sadece Core katmanı ile ilgilenir
 
     }
 }

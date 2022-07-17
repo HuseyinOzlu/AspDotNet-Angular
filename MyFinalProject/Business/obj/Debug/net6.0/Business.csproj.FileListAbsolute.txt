@@ -15,3 +15,5 @@ C:\Users\PC\Desktop\AspDotNet-Angular\MyFinalProject\Business\obj\Debug\net6.0\B
 C:\Users\PC\Desktop\AspDotNet-Angular\MyFinalProject\Business\obj\Debug\net6.0\refint\Business.dll
 C:\Users\PC\Desktop\AspDotNet-Angular\MyFinalProject\Business\obj\Debug\net6.0\Business.pdb
 C:\Users\PC\Desktop\AspDotNet-Angular\MyFinalProject\Business\obj\Debug\net6.0\ref\Business.dll
+C:\Users\PC\Desktop\AspDotNet-Angular\MyFinalProject\Business\bin\Debug\net6.0\Core.dll
+C:\Users\PC\Desktop\AspDotNet-Angular\MyFinalProject\Business\bin\Debug\net6.0\Core.pdb
