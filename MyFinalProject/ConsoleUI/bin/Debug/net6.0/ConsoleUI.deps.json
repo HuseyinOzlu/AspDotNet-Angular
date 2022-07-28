@@ -460,6 +460,7 @@
       },
       "Business/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
           "DataAccess": "1.0.0",
           "Entities": "1.0.0"
         },
