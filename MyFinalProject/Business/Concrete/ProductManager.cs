@@ -1,9 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidatinContext.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +24,14 @@ namespace Business.Concrete
         {
             _productDal = productDal;
         }
+
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            //business codes
-            if (product.ProductName.Length < 2)
-            {
-                //magic strings--Constants sabitler
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+            //business codes(iş kodu) ==> For_E: kredi verirken finansal puanı, alabilinir
+            //validation(Doğrulama)==> şu aralarda olması gerekir nesnenşn yapısı ile ilgili olan
+
+
             _productDal.Add(product);
 
             return new SuccessResult(Messages.ProductAdded);

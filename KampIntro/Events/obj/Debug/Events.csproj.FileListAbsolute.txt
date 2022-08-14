@@ -1,0 +1,8 @@
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\bin\Debug\Events.exe.config
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\bin\Debug\Events.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\bin\Debug\Events.pdb
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\obj\Debug\Events.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\obj\Debug\Events.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\obj\Debug\Events.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\obj\Debug\Events.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Events\obj\Debug\Events.pdb

@@ -1,0 +1,8 @@
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\bin\Debug\Atrributes.exe.config
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\bin\Debug\Atrributes.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\bin\Debug\Atrributes.pdb
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\obj\Debug\Atrributes.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\obj\Debug\Atrributes.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\obj\Debug\Atrributes.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\obj\Debug\Atrributes.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Atrributes\obj\Debug\Atrributes.pdb

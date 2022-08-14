@@ -1,0 +1,8 @@
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\bin\Debug\Delegates.exe.config
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\bin\Debug\Delegates.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\bin\Debug\Delegates.pdb
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\obj\Debug\Delegates.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\obj\Debug\Delegates.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\obj\Debug\Delegates.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\obj\Debug\Delegates.exe
+C:\Users\PC\Desktop\AspDotNet-Angular\KampIntro\Delegates\obj\Debug\Delegates.pdb
