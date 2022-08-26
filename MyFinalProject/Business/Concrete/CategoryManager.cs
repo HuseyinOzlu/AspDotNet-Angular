@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -12,22 +14,24 @@ namespace Business.Concrete
     public class CategoryManager : ICategoryService
     {
         ICategoryDal _categoryDal;
+        
 
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
         }
 
-        public List<Category> GetAll()
+        public IDataResult<List<Category>> GetAll()
         {
             //İş kodları
-            return _categoryDal.GetAll();
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
             
         }
         //SELECET * FROM Categories WHERE CategoryId = 3 ==>>SQL versiyonu
-        public Category GetById(int categoryId)
+        public  IDataResult<Category> GetById(int categoryId)
         {
-            return _categoryDal.Get(c=>c.CategoryId == categoryId);
+            return new SuccessDataResult<Category>(_categoryDal.Get(c=>c.CategoryId == categoryId));
         }
+  
     }
 }

@@ -10,11 +10,12 @@ using System.Threading.Tasks;
 
 namespace Core.Aspects.Autofac.Validation
 {
-    public class ValidationAspect : MethodInterception
+    public class ValidationAspect : MethodInterception // Aspect:Methodun başında sonunda ortasında hata verdiğinde Çalışcak şeyler
     {
         private Type _validatorType;
         public ValidationAspect(Type validatorType)
         {
+            // defensive coding
             if (!typeof(IValidator).IsAssignableFrom(validatorType))
             {
                 throw new System.Exception("Bu bir doğrulama sınıfı değil");
@@ -24,9 +25,10 @@ namespace Core.Aspects.Autofac.Validation
         }
         protected override void OnBefore(IInvocation invocation)
         {
-            var validator = (IValidator)Activator.CreateInstance(_validatorType);
-            var entityType = _validatorType.BaseType.GetGenericArguments()[0];
-            var entities = invocation.Arguments.Where(t => t.GetType() == entityType); //invocation method demek
+            var validator = (IValidator)Activator.CreateInstance(_validatorType); // Instance : Product product = new Product(); 
+            var entityType = _validatorType.BaseType.GetGenericArguments()[0]; // PrductValidator Base in Genreic argümanların 0. argümanalrın tipini yakala
+            var entities = invocation.Arguments.Where(t => t.GetType() == entityType); //invocation method(Add vs.) demek
+            // bwnim methodumdakileri gezip Base deki elemanalrın tipi ile eşleşiyo mu diye kontrol ediyor
             foreach (var entity in entities)
             {
                 ValidationTool.Validate(validator, entity);

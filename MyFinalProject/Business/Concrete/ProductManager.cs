@@ -1,8 +1,10 @@
 ﻿using Business.Abstract;
+using Business.CCS;
 using Business.Constants;
 using Business.ValidatinContext.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -19,25 +21,35 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
-
-        public ProductManager(IProductDal productDal)
+        ICategoryService _categoryService;
+        public ProductManager(IProductDal productDal, ICategoryService categoryService)
         {
             _productDal = productDal;
+            _categoryService = categoryService;
         }
 
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            //business codes(iş kodu) ==> For_E: kredi verirken finansal puanı, alabilinir
-            //validation(Doğrulama)==> şu aralarda olması gerekir nesnenşn yapısı ile ilgili olan
-
+            //Bir kategoride en fazla 15 ürün olabilir
+            //*!*!*! iş kurallarını yazarken temiz temiz işle dry yapma (güncellemede vs.)
+            //business Codes
+            //var result = _productDal.GetAll(p => p.CategoryId == product.CategoryId).Count;
+            //if (result >= 10)
+            //{
+            //    return new ErrorResult(Messages.ProductCountofCategoryError);
+            //}
+            IResult result = BusinessRules.Run(CheckIfProductNameExist(product.ProductName),
+                CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryCountOfCorrect());
+            if (result != null)
+            { return result; }
 
             _productDal.Add(product);
 
             return new SuccessResult(Messages.ProductAdded);
         }
 
-        public IDataResult<List<Product>> GetAll()
+            public IDataResult<List<Product>> GetAll()
         {
             // İş kodları
             // Yetkisi var mı?
@@ -71,6 +83,45 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ProductDetailDto>>
                 (_productDal.GetProductDetails());
+        }
+
+        [ValidationAspect(typeof(ProductValidator))]
+        public IResult Update(Product product)
+        {
+            //}
+            if (CheckIfProductCountOfCategoryCorrect(product.CategoryId).Success) ;
+            {
+                _productDal.Update(product);
+
+                return new SuccessResult(Messages.ProductAdded);
+            }
+            return new ErrorResult();
+            throw new NotImplementedException();
+        }
+        // Business Kodları böyle yazılır
+        private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)
+        {
+            //Select count(*) from products where category
+            var result = _productDal.GetAll(p => p.CategoryId == categoryId).Count;
+            if (result >= 10)
+            {
+                return new ErrorResult(Messages.ProductCountofCategoryError);
+            }
+            return new SuccessResult();
+        }
+        private IResult CheckIfProductNameExist(string productName)
+        {
+            var result = _productDal.GetAll(p => p.ProductName == productName).Any();
+            if(result)
+            { return new ErrorResult(Messages.ProductNameAlreadyExists); }
+            return new SuccessResult();
+        }
+        private IResult CheckIfCategoryCountOfCorrect()
+        {
+            var result = _categoryService.GetAll();
+            if (result.Data.Count > 15)
+            { return new ErrorResult(Messages.CategoryLimitExceded); }
+            return new SuccessResult();
         }
     }
 }
